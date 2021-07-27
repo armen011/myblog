@@ -2,24 +2,26 @@ import { makeStyles } from "@material-ui/core/styles";
 
 export const useStyles = makeStyles({
   root: {
-    minWidth: 275,
-  },
-  inputs: {
-    width: 275,
+    width: "375px",
+    position: "fixed",
+    left: 0,
+    right: 0,
+    top: "100px",
+    margin: "auto",
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
-    background: "red",
   },
-  bullet: {
-    display: "inline-block",
-    margin: "0 2px",
-    transform: "scale(0.8)",
-  },
+
   title: {
-    fontSize: 14,
+    fontSize: 25,
+    textAlign: "center",
   },
-  pos: {
-    marginBottom: 12,
+  smallInp: {
+    width: "180px",
+    marginBottom: "20px",
+  },
+  bigInp: {
+    width: "350px",
   },
 });

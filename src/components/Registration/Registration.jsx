@@ -7,6 +7,7 @@ import {
   setLocalStorage,
 } from "../Helper/helper";
 import { Link } from "react-router-dom";
+import Header from "../Header/Header";
 
 export default class Registration extends React.Component {
   state = {
@@ -76,11 +77,14 @@ export default class Registration extends React.Component {
   };
   render() {
     return (
-      <RegistrForm
-        state={this.state}
-        metod={this.handleChange}
-        submit={this.handleSubmit}
-      />
+      <div>
+        <Header />
+        <RegistrForm
+          state={this.state}
+          metod={this.handleChange}
+          submit={this.handleSubmit}
+        />
+      </div>
     );
   }
 }

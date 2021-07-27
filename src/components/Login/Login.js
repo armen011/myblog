@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Header from "../Header/Header";
 import { getLocalStorage, setSessionStorage } from "../Helper/helper";
 import LoginForm from "./LoginForm";
 
@@ -36,11 +37,14 @@ export default class Login extends React.Component {
   };
   render() {
     return (
-      <LoginForm
-        state={this.state}
-        metod={this.handleChange}
-        submit={this.handleSubmit}
-      />
+      <div>
+        <Header />
+        <LoginForm
+          state={this.state}
+          metod={this.handleChange}
+          submit={this.handleSubmit}
+        />
+      </div>
     );
   }
 }

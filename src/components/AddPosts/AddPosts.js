@@ -1,4 +1,5 @@
 import React from "react";
+import Header from "../Header/Header";
 import {
   genarateId,
   getLocalStorage,
@@ -62,11 +63,14 @@ export class AddPosts extends React.Component {
   };
   render() {
     return (
-      <AddPostCard
-        state={this.state}
-        metod={this.handleChange}
-        submit={this.handleSubmit}
-      />
+      <div>
+        <Header />
+        <AddPostCard
+          state={this.state}
+          metod={this.handleChange}
+          submit={this.handleSubmit}
+        />
+      </div>
     );
   }
 }

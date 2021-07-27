@@ -53,3 +53,6 @@ export function validateEmail(emailAdress) {
   }
   return "";
 }
+export function getUserBiId(id) {
+  return getLocalStorage("users").filter((elm) => elm.id === id)[0].name;
+}

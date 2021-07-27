@@ -22,29 +22,45 @@ export default function Header() {
 
   const handleClose = () => {
     setAnchorEl(null);
+  };
+  const Profile = () => {
+    handleClose();
+    window.location = "/profile/id=" + getSessionStorage("id");
+  };
+  const logOut = () => {
+    handleClose();
     sessionStorage.clear();
+    window.location = "/";
+  };
+  const logIn = () => {
+    handleClose();
+    window.location = "/login";
+  };
+  const registr = () => {
+    handleClose();
+    window.location = "/registration";
   };
 
   const items = getSessionStorage("id") ? (
     <div>
-      <MenuItem onClick={handleClose}>{header.profile}</MenuItem>
-      <MenuItem onClick={handleClose}>{header.logOut}</MenuItem>
+      <MenuItem onClick={Profile}>{header.profile}</MenuItem>
+      <MenuItem onClick={logOut}>{header.logOut}</MenuItem>
     </div>
   ) : (
     <div>
-      <Link to="/login">
-        <MenuItem onClick={handleClose}>{header.logIn}</MenuItem>
-      </Link>
-      <Link to="/registration">
-        <MenuItem onClick={handleClose}>{header.registration}</MenuItem>
-      </Link>
+      <MenuItem onClick={logIn}>{header.logIn}</MenuItem>
+      <MenuItem onClick={registr}>{header.registration}</MenuItem>
     </div>
   );
   return (
     <div className={classes.root}>
       <AppBar position="static">
         <Toolbar>
-          <Typography variant="h1" className={classes.title}>
+          <Typography
+            variant="h1"
+            className={classes.title}
+            onClick={() => (window.location = "/")}
+          >
             {header.title}
           </Typography>
           {auth && (
